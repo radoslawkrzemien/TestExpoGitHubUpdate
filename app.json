@@ -16,14 +16,18 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "test.rkrzemien.test50"
+      "bundleIdentifier": "test.rkrzemien.test50",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rkrzemien.test50"
+      "package": "com.rkrzemien.test50",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +37,9 @@
         "projectId": "c851180e-1766-406f-b67c-583f3d5d9f80"
       }
     },
-    "owner": "rkrzemien"
+    "owner": "rkrzemien",
+    "updates": {
+      "url": "http://127.0.0.1:3000/expo-updates/c851180e-1766-406f-b67c-583f3d5d9f80"
+    }
   }
 }
