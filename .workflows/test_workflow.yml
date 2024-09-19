@@ -1,0 +1,12 @@
+name: Test workflow
+on:
+  pull_request:
+    branches: ['main']
+jobs:
+  comment-on-pr:
+    runs-on: ubuntu-latest
+    type: github-pr-comment
+    params:
+      token: ${{ secrets.GITHUB_TOKEN }}
+      issue-number: ${{ github.event.pull_request.number }}
+      body: "Test comment"
