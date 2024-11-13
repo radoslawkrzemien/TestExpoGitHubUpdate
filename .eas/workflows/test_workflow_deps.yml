@@ -1,0 +1,17 @@
+name: Testing deps workflow
+on:
+  push:
+    branches: ['main']
+jobs:
+  hello:
+    steps:
+      - run: echo "Hello!"
+
+  fail_job:
+    steps:
+      - run: notacommand
+
+  dependant_job:
+    needs: [hello, fail_job]
+    steps:
+      - run: echo "I should not execute"
