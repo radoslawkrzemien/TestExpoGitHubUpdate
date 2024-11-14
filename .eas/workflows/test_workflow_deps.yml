@@ -14,4 +14,4 @@ jobs:
   dependant_job:
     needs: [hello, fail_job]
     steps:
-      - run: echo "I should not execute."
+      - run: echo "I should not execute here."
