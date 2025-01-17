@@ -11,7 +11,48 @@ jobs:
     steps:
       - run: notacommand
 
-  dependant_job:
-    needs: [hello, fail_job]
+  dependant_job_execute:
+    needs: [hello]
     steps:
-      - run: echo "I should not execute here."
+      - run: echo "I should execute here."
+
+  dependant_job_fail:
+    needs: [fail_job]
+    steps:
+      - run: echo "I should fail."
+
+  dependant_job_skip:
+    needs: [hello]
+    if: ${{ false }}
+    steps:
+      - run: echo "I should skip."
+
+  dependant_job_question_1:
+    needs: [dependant_job_skip]
+    if: ${{ true }}
+    steps:
+      - run: echo "I should skip."
+
+  dependant_job_question_2:
+    needs: [hello, dependant_job_skip]
+    if: ${{ true }}
+    steps:
+      - run: echo "I should skip."
+
+  dependant_job_question_3:
+    needs: [hello, dependant_job_skip]
+    if: ${{ false }}
+    steps:
+      - run: echo "I should skip."
+
+  dependant_job_question_4:
+    needs: [hello, dependant_job_fail]
+    if: ${{ true }}
+    steps:
+      - run: echo "I should fail."
+
+  dependant_job_question_5:
+    needs: [hello, dependant_job_fail]
+    if: ${{ false }}
+    steps:
+      - run: echo "I should fail."
