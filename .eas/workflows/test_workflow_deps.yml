@@ -1,6 +1,6 @@
 name: Testing deps workflow
 on:
-  push:
+  pull_request:
     branches: ['main']
 jobs:
   hello:
