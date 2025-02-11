@@ -13,5 +13,6 @@ jobs:
     steps:
       - run: |
           echo ${{ github.event }}
+          echo TEST
       - run: |
           echo ${{ github.event }} | jq
