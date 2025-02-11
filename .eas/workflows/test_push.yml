@@ -1,0 +1,17 @@
+name: Test push event
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v123'
+
+jobs:
+  test:
+    name: Run on branch push
+    steps:
+      - run: |
+          echo ${{ github.event }}
+      - run: |
+          echo ${{ github.event }} | jq
