@@ -5,6 +5,7 @@ on:
     branches: ['main']
   pull_request_labeled:
     - 'test-label'
+    - 'another-label'
 jobs:
   comment-on-pr:
     runs-on: ubuntu-latest
